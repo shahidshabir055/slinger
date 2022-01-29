@@ -1,0 +1,51 @@
+<div class="container">
+  <mat-card style="background-color: rgba(239, 239, 239, 0.993);">
+    <button mat-button >	<mat-icon color="primary">keyboard_backspace</mat-icon></button>
+  </mat-card>
+  <mat-card>
+    <mat-card-content>
+    <div class="login-fields">
+      <div>
+        <mat-card-title style="font-size: 2rem; " >Login</mat-card-title>
+      </div>
+      <div>
+        <mat-card-subtitle>Hello! Log  in with your email!</mat-card-subtitle>
+      </div>
+      <div >
+        <p style="margin-bottom: 0;">Email:</p>
+        <mat-form-field class="fields" appearance="outline">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div >
+        <div class="lines">
+        <p style="margin-bottom: 0;">Password: </p>
+        <p >Forgot password</p>
+      </div>
+        <mat-form-field class="fields" appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input matInput placeholder="password" MatFormControlName="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+        <mat-checkbox class="check-box">Remember me!</mat-checkbox>
+
+      <button class="btn-login" mat-button color="primary" routerLink="/smart-table">Login</button>
+      <p style="margin: 5vmin;">or enter with:</p>
+      <p>
+        <img style="margin: 5px;" src="assets/git.png">
+        <img style="margin: 5px;" src="assets/facebook.png">
+        <img style="margin: 5px;" src="assets/twiiter.png">
+      </p>
+      <p>Don't have an account? <a routerLink="/register">Register</a></p>
+    </div>
+    </mat-card-content>
+    <mat-card-actions>
+
+
+    </mat-card-actions>
+  </mat-card>
+</div>

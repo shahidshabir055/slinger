@@ -1,0 +1,65 @@
+<div class="container">
+  <mat-card style="background-color: rgba(239, 239, 239, 0.993);">
+    <button mat-button >	<mat-icon color="primary">keyboard_backspace</mat-icon></button>
+  </mat-card>
+  <mat-card>
+    <mat-card-content>
+    <div class="login-fields">
+      <div>
+        <mat-card-title style="font-size: 2rem; " >Register</mat-card-title>
+      </div>
+
+      <div >
+        <p style="margin-bottom: 0;">Full Name:</p>
+        <mat-form-field class="fields" appearance="outline">
+          <mat-label>Enter your full Name</mat-label>
+          <input matInput placeholder="pat@example.com" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div >
+        <p style="margin-bottom: 0;">Email:</p>
+        <mat-form-field class="fields" appearance="outline">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <p style="margin-bottom: 0;">Password:</p>
+        <mat-form-field class="fields" appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input matInput placeholder="password" MatFormControlName="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <p style="margin-bottom: 0;">Repeat Password:</p>
+        <mat-form-field class="fields" appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input matInput placeholder="password" MatFormControlName="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+
+
+      <mat-checkbox class="check-box" style="font-size: 1rem;">Agree to: <a style="font-weight: 700; font-size: 1rem;" href="#">Terms and Conditions</a></mat-checkbox>
+      <button class="btn-login" mat-button color="primary">Register</button>
+      <p style="margin: 5vmin;">or enter with:</p>
+      <p>
+        <img style="margin: 5px;" src="assets/git.png">
+        <img style="margin: 5px;" src="assets/facebook.png">
+        <img style="margin: 5px;" src="assets/twiiter.png">
+      </p>
+      <p>Already have an account? <a routerLink="/login">Login</a></p>
+    </div>
+    </mat-card-content>
+    <mat-card-actions>
+
+
+    </mat-card-actions>
+  </mat-card>
+</div>
