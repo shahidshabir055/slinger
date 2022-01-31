@@ -1,11 +1,41 @@
-<mat-toolbar color="primary">
-<mat-toolbar-row>
-  <a style="text-decoration: none; color: white;" href="">Slinger</a>
-  <span class="example-spacer"></span>
-  <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
-  <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon> -->
-  <a style="text-decoration: none; color: white;" routerLink="/register">Login</a>
-  <span class="example-spacer"></span>
-  <a style="text-decoration: none; color: white;" routerLink="/smart-table">Smart Table</a>
-</mat-toolbar-row>
-</mat-toolbar>
+<div class="d-flex">
+  <mat-toolbar color="primary">
+
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+        <span>Slinger</span>
+        <span class="example-spacer"></span>
+        <a mat-button class="header-links" routerLink="/login"> Login </a>
+
+        <a mat-button class="header-links" routerLink="/smart-table"> Smart Table</a>
+
+
+          <a mat-button class="header-links" routerLink="register"> Register</a>
+
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+
+        <hr>
+
+        <a mat-list-item routerLink="register"> Register</a>
+        <hr>
+        <a mat-list-item routerLink="/login"> Login </a>
+        <hr>
+        <a mat-list-item routerLink="/smart-table"> Smart Table</a>
+        <hr>
+
+        <a mat-list-item href="" mat-list-item>Close</a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;">
+
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  </div>

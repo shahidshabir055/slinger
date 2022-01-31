@@ -10,7 +10,12 @@ p{
 .container{
   margin: 5vmin;
   height: 100vh;
-
+}
+.container-two{
+  margin: 5vmin;
+  height: max-content;
+ overflow: scroll;
+  border: 1px solid black;
 
 }
 .example-container .mat-form-field + .mat-form-field {
@@ -23,7 +28,7 @@ p{
   align-items: center;
 }
 .fields{
-  width: 40vw;
+  width: 35vmax;
 }
 .btn-login{
   width: 40vw;
@@ -41,7 +46,7 @@ p{
 
 }
 .check-box {
- width: 40vw;
+ width: 35vmax;
  margin-bottom: 5vmin;
 }
 .lines{
@@ -54,5 +59,23 @@ p{
   height: 5vh;
   background-color: rgba(239, 239, 239, 0.993) ;
   margin: 0;
+}
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.header-links{
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
 }
 
