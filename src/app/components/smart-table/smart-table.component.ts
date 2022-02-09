@@ -12,6 +12,7 @@ export class SmartTableComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  actions="right";
   settings = {
     columns: {
       id: {
@@ -26,7 +27,9 @@ export class SmartTableComponent implements OnInit {
       email: {
         title: 'Email'
       }
-    }
+    },
+
+
   };
 
   data = [

@@ -1,33 +1,46 @@
-<div class="d-flex">
+
   <mat-toolbar color="primary">
 
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
           <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
         </button>
-        <span>Slinger</span>
+        <span style="margin-left: 1vw;">Slinger</span>
         <span class="example-spacer"></span>
         <a mat-button class="header-links" routerLink="/login"> Login </a>
-
         <a mat-button class="header-links" routerLink="/smart-table"> Smart Table</a>
-
-
-          <a mat-button class="header-links" routerLink="register"> Register</a>
+        <a mat-button class="header-links" routerLink="register"> Register</a>
 
   </mat-toolbar>
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav>
+  <mat-sidenav-container hasBackdrop='false'  >
+
+    <mat-sidenav *ngIf="scrWidth<=600" #sidenav mode='over'  (keydown.escape)="close('escape')" style="width: 40vw; background: rgb(19, 20, 24); color: white">
       <mat-nav-list>
-
         <hr>
 
-        <a mat-list-item routerLink="register"> Register</a>
+        <a style="color: white;" mat-list-item routerLink="register"><mat-icon>library_add</mat-icon> <span style="margin-left: 5px;"> Register</span></a>
         <hr>
-        <a mat-list-item routerLink="/login"> Login </a>
+        <a style="color: white;" mat-list-item routerLink="/login"> <mat-icon>perm_identity</mat-icon> <span style="margin-left: 5px;"> Login</span> </a>
         <hr>
-        <a mat-list-item routerLink="/smart-table"> Smart Table</a>
+        <a style="color: white;" mat-list-item routerLink="/smart-table"><mat-icon> table_chart</mat-icon> <span style="margin-left: 5px;">Smart Table</span></a>
         <hr>
 
-        <a mat-list-item href="" mat-list-item>Close</a>
+        <a style="color: white;" (click)="sidenav.toggle()" mat-list-item><mat-icon>close</mat-icon><span style="margin-left: 5px;">Close</span></a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav *ngIf="scrWidth>600"  #sidenav mode='side'  (keydown.escape)="close('escape')" style="width: 30vmin; background: rgb(19, 20, 24); color: white">
+      <mat-nav-list>
+        <hr>
+
+        <a style="color: white;" mat-list-item routerLink="register"><mat-icon>library_add</mat-icon> <span style="margin-left: 5px;"> Register</span></a>
+        <hr>
+        <a style="color: white;" mat-list-item routerLink="/login"> <mat-icon>perm_identity</mat-icon> <span style="margin-left: 5px;"> Login</span> </a>
+        <hr>
+        <a style="color: white;" mat-list-item routerLink="/smart-table"><mat-icon> table_chart</mat-icon> <span style="margin-left: 5px;">Smart Table</span></a>
+        <hr>
+
+        <a style="color: white;" (click)="sidenav.toggle()" mat-list-item><mat-icon>close</mat-icon><span style="margin-left: 5px;">Close</span></a>
 
       </mat-nav-list>
     </mat-sidenav>
@@ -37,5 +50,6 @@
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
+
   </mat-sidenav-container>
-  </div>
+

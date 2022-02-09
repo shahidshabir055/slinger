@@ -28,10 +28,10 @@ p{
   align-items: center;
 }
 .fields{
-  width: 35vmax;
+  width: 35vw;
 }
 .btn-login{
-  width: 40vw;
+  width: 35vw;
   color: rgba(65, 45, 45, 0.993);
   background-color: rgba(239, 239, 239, 0.993) ;
   border: none;
@@ -76,6 +76,34 @@ p{
 .header-links{
   color: white;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 10vw;
+}
+@media only screen and (max-width: 600px) {
+  .mobile{
+    text-decoration: none;
+  }
+  .fields{
+    width: 70vw;
+  }
+  .btn-login{
+    width: 70vw;
+    color: rgba(65, 45, 45, 0.993);
+    background-color: rgba(239, 239, 239, 0.993) ;
+    border: none;
+    height: 35px;
+    cursor: pointer;
+    text-align: center;
+    initial-value: "Login";
+  }
+  .btn-login:hover{
+    background-color: midnightblue;
+    color: white;
+
+  }
+  .check-box {
+    width: 70vw;
+    margin-bottom: 20px;
+   }
+
 }
 

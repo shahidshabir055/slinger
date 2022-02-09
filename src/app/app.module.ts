@@ -16,7 +16,6 @@ import { MatInputModule} from '@angular/material/input';
 import {MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule} from '@angular/material/list';
 @NgModule({
@@ -26,7 +25,7 @@ import { MatListModule} from '@angular/material/list';
     LoginComponent,
     SmartTableComponent,
     HeaderComponent,
-    SidebarComponent
+
   ],
   imports: [
     BrowserModule,
