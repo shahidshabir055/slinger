@@ -47,15 +47,20 @@ p{
 
 }
 .check-box {
- width: 27vw;
- margin-bottom: 14px;
+ width: 35vw;
+ margin-bottom: 5vmin;
 }
+.check-box-one {
+  width: 26vw;
+  margin-bottom: 5vmin;
+ }
+
+
 .lines{
   display: flex;
   flex-direction: row;
   font-size: 1rem;
   justify-content: space-between;
-  align-items: center;
 }
 .top-card{
   height: 5vh;
@@ -103,7 +108,12 @@ p{
 
   }
   .check-box {
-    width: 37vw;
+    width: 70vw;
+    margin-bottom: 20px;
+   }
+   .check-box-one {
+    width: 36vw;
+    margin-top: -3px;
    }
 
 }
