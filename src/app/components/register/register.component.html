@@ -56,18 +56,11 @@
           <mat-error *ngIf="repeatPassword.hasError('required')">
             Password is <strong>required</strong>
           </mat-error>
-          <mat-error *ngIf="repeatPassword.hasError('minlength') && !repeatPassword.hasError('required')">
-            Minimum password length is 8
-          </mat-error>
-
         </mat-form-field>
-        <mat-error class="text-danger" style="margin-top: 0;" *ngIf="registerDisabled">
+        <mat-error class="text-danger" style="margin-top: 0;" *ngIf="registerDisabled && !repeatPassword.hasError('required')">
           Password and repeat password are not same
         </mat-error>
       </div>
-
-
-
       <mat-checkbox class="check-box"  style="font-size: 1rem;">Agree to: <a style="font-weight: 700; font-size: 1rem;" href="#">Terms and Conditions</a></mat-checkbox>
       <button class="btn-login" mat-button color="primary">Register</button>
       <p style="margin: 5vmin;">or enter with:</p>
