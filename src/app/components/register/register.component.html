@@ -39,7 +39,10 @@
         <p style="margin-bottom: 0;">Password:</p>
         <mat-form-field class="fields" appearance="outline">
           <mat-label>Enter your password</mat-label>
-          <input type="password" matInput placeholder="Password" [formControl]="password" required>
+          <input type="password" matInput placeholder="Password" [formControl]="password">
+          <mat-error *ngIf="password.hasError('minlength') && !password.hasError('required')">
+            Minimum password length is 8
+          </mat-error>
           <mat-error *ngIf="password.hasError('required')">
             Password is <strong>required</strong>
           </mat-error>
@@ -49,11 +52,18 @@
         <p style="margin-bottom: 0;">Repeat Password:</p>
         <mat-form-field class="fields" appearance="outline">
           <mat-label>Enter your password Again</mat-label>
-          <input type="password" matInput placeholder="Repeat Password" [formControl]="repeatPassword" required>
+          <input type="password" matInput placeholder="Repeat Password" [formControl]="repeatPassword" (keyup)="comparePassword()">
           <mat-error *ngIf="repeatPassword.hasError('required')">
             Password is <strong>required</strong>
           </mat-error>
+          <mat-error *ngIf="repeatPassword.hasError('minlength') && !repeatPassword.hasError('required')">
+            Minimum password length is 8
+          </mat-error>
+
         </mat-form-field>
+        <mat-error class="text-danger" style="margin-top: 0;" *ngIf="registerDisabled">
+          Password and repeat password are not same
+        </mat-error>
       </div>
 
 
