@@ -18,6 +18,7 @@ import { MatCheckboxModule} from '@angular/material/checkbox';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule} from '@angular/material/list';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { MatListModule} from '@angular/material/list';
     MatCheckboxModule,
     Ng2SmartTableModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

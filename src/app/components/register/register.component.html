@@ -13,16 +13,24 @@
         <p style="margin-bottom: 0;">Full Name:</p>
         <mat-form-field class="fields" appearance="outline">
           <mat-label>Enter your full Name</mat-label>
-          <input matInput placeholder="pat@example.com" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          <input matInput [formControl]="fullName" placeholder="Syed Shahid" required>
+          <mat-error *ngIf="fullName.hasError('required')">
+            Full Name is <strong>required</strong>
+          </mat-error>
+
         </mat-form-field>
       </div>
       <div >
         <p style="margin-bottom: 0;">Email:</p>
         <mat-form-field class="fields" appearance="outline">
           <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          <input type="email" matInput [formControl]="email" placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="email.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
 
@@ -31,22 +39,26 @@
         <p style="margin-bottom: 0;">Password:</p>
         <mat-form-field class="fields" appearance="outline">
           <mat-label>Enter your password</mat-label>
-          <input matInput placeholder="password" MatFormControlName="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          <input type="password" matInput placeholder="Password" [formControl]="password" required>
+          <mat-error *ngIf="password.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
       <div>
         <p style="margin-bottom: 0;">Repeat Password:</p>
         <mat-form-field class="fields" appearance="outline">
-          <mat-label>Enter your password</mat-label>
-          <input matInput placeholder="password" MatFormControlName="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          <mat-label>Enter your password Again</mat-label>
+          <input type="password" matInput placeholder="Repeat Password" [formControl]="repeatPassword" required>
+          <mat-error *ngIf="repeatPassword.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
 
 
 
-      <mat-checkbox class="check-box" style="font-size: 1rem;">Agree to: <a style="font-weight: 700; font-size: 1rem;" href="#">Terms and Conditions</a></mat-checkbox>
+      <mat-checkbox class="check-box"  style="font-size: 1rem;">Agree to: <a style="font-weight: 700; font-size: 1rem;" href="#">Terms and Conditions</a></mat-checkbox>
       <button class="btn-login" mat-button color="primary">Register</button>
       <p style="margin: 5vmin;">or enter with:</p>
       <p>
