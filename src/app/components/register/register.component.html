@@ -13,7 +13,7 @@
 
         <mat-form-field class="fields" appearance="outline">
           <mat-label>Enter your full Name</mat-label>
-          <input matInput [formControl]="fullName" placeholder="Syed Shahid" required>
+          <input matInput [formControl]="fullName" placeholder="Syed Shahid" autocomplete="off">
           <mat-error *ngIf="fullName.hasError('required')">
             Full Name is <strong>required</strong>
           </mat-error>
@@ -24,7 +24,7 @@
 
         <mat-form-field class="fields" appearance="outline">
           <mat-label>Enter your email</mat-label>
-          <input type="email" matInput [formControl]="email" placeholder="Ex. pat@example.com">
+          <input type="email" matInput [formControl]="email" placeholder="Ex. pat@example.com" autocomplete="off">
           <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
             Please enter a valid email address
           </mat-error>
@@ -39,7 +39,7 @@
 
         <mat-form-field class="fields" appearance="outline">
           <mat-label>Enter your password</mat-label>
-          <input type="password" matInput placeholder="Password" [formControl]="password">
+          <input type="password" matInput placeholder="Password" [formControl]="password" autocomplete="off">
           <mat-error *ngIf="password.hasError('minlength') && !password.hasError('required')">
             Minimum password length is 8
           </mat-error>
@@ -52,7 +52,7 @@
 
         <mat-form-field class="fields" appearance="outline">
           <mat-label>Enter your password Again</mat-label>
-          <input type="password" matInput placeholder="Repeat Password" [formControl]="repeatPassword" (keyup)="comparePassword()">
+          <input type="password" matInput placeholder="Repeat Password" [formControl]="repeatPassword" (keyup)="comparePassword()" autocomplete="off">
           <mat-error *ngIf="repeatPassword.hasError('required')">
             Password is <strong>required</strong>
           </mat-error>
